@@ -1,0 +1,131 @@
+@charset "UTF-8";   /* 編碼一定要寫不然會變亂碼，而且一定要在第一行 */
+
+/* CSS 變數 */
+:root {
+    /* 灰階 */
+    --deep: #444;
+    --dark: #666;
+    --grey: #999;
+    --light: #f1f1f1;
+    /* 背景 */
+    --bg-1: #f2edf0;
+    --bg-2: #e6ece5;
+    --bg-3: #ecf0f4;
+    /* 輔助 */
+    --lesser-1: #f3e4e4;
+    --lesser-2: #efdbdb;
+    --lesser-3: #cdaaab;
+    --lesser-4: #8f6d6b;
+    /* 透明 */
+    --alpha-w-20: rgba(255, 255, 255, 0.2);
+    /* 尺寸 */
+    --ex: 9999;
+}
+
+/* CSS reset */
+* { /* for 全部 */
+     box-sizing: border-box; /* 不累加內距及邊框，for RWD */
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video{
+    margin: 0;   
+    padding: 0; 
+}
+/* 重置字體 */
+body {   
+    font-family: sans-serif;   
+    font-size: 100%;   
+    line-height: 1.5; 
+}
+/* 重置標題 */
+h1, h2, h3, h4, h5, h6 {   
+    font-weight: normal; 
+}
+/* 重置列表 */
+ul, ol {   
+    list-style: none; 
+}
+/* 重置圖片 */
+img {   
+    display: block;   
+    width: 100%; /* 跟著容器變化 */
+}
+/* 重置連結 */
+a {   /* 沒有標點符號就是標籤 */
+    display: block; /* inline不支援尺寸設定，但a常用來設定尺寸，所以直接把inline改為block。也可以直接寫在reset裡*/
+    color: #666; /* 重複的色碼可以省略 */ /* 所有顏色共用，包括visited, hover, focus, active */
+    text-decoration: none; 
+}
+
+/* 頁首區 */ 
+/* css沒有先後問題，但通常為了方便會按照html的順序寫 */
+#topbar { /* id用# */
+    position: fixed; /* position權重較重 */
+    top: 0;
+    left: 0;
+    width: 100%; /* position預設寬高為hug，要手動寫寬度 */
+
+    display: flex;
+    justify-content: space-between;
+    padding: 30px; /* 上下左右都會有內距 */
+}
+
+div.logo { /* class用. */
+    width: 55px; /* 不希望logo變大變小，會影響排版 */
+}
+
+#topbar ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* icon選單 */
+#topbar .icon a { 
+    width: 35px; /* 很小的尺寸會寫死，不會用百分比縮放 */
+    height: 35px;
+    margin: 5px;
+}
+
+/* svg檔案會自動w:fill/h:auto 其他點陣圖不會自動fill，要寫background-size: 100%;*/
+ .icon-FB { background-image: url(../images/icon-fb.svg); }
+ .icon-IG { background-image: url(../images/icon-ig.svg); }
+ .icon-LINE { background-image: url(../images/icon-line.svg); }
+
+ .icon-FB:hover { background-image: url(../images/icon-fb-hover.svg); }
+ .icon-IG:hover { background-image: url(../images/icon-ig-hover.svg); }
+ .icon-LINE:hover { background-image: url(../images/icon-line-hover.svg); }
+
+/* 主選單 */
+#topbar .menu {
+    padding: 0 10px; /* 順時針方向 */
+    border-radius: 9999px;
+    /* 玻璃擬態 */
+    background-color: var(--alpha-w-20);
+    border: 2px solid var(--alpha-w-20);
+}
+
+#topbar .menu a {
+    margin: 10px;
+    border-bottom: solid 2px transparent; /* 保留hover的空間但顏色透明，以防尺寸變動 */
+}
+
+#topbar .menu a:hover {
+    color: #222;
+    border-bottom: solid 2px #222;
+}
+/* 聯絡我們 */
+#contact {
+    height: 100vh;
+    background-color: var(--bg-1);
+}
