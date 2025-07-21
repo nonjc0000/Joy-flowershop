@@ -18,6 +18,9 @@
     --lesser-4: #8f6d6b;
     /* 透明 */
     --alpha-w-20: rgba(255, 255, 255, 0.2);
+    --alpha-w-40: rgba(255, 255, 255, 0.4);
+
+    --alpha-b-20: rgba(0, 0, 0, 0.2);
     /* 尺寸 */
     --ex: 9999;
 }
@@ -41,11 +44,14 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video{
     margin: 0;   
     padding: 0; 
+    font-size: 100%;  
 }
 /* 重置字體 */
 body {   
-    font-family: sans-serif;   
-    font-size: 100%;   
+    /* 字體名稱有空格（兩個單字以上）的要引號（""）、中文一定要引號。
+    單一英文單字或者有用dash就不用加引號。（不知道的話全加引號）*/
+    font-family: /*⻄⽂*/ -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+                 /*中⽂*/ "蘋⽅-繁", "PingFang TC", "⿊體-繁", "Heiti TC", "微軟正⿊體", "Microsoft JhengHei", sans-serif;
     line-height: 1.5; 
 }
 /* 重置標題 */
@@ -65,7 +71,15 @@ img {
 a {   /* 沒有標點符號就是標籤 */
     display: block; /* inline不支援尺寸設定，但a常用來設定尺寸，所以直接把inline改為block。也可以直接寫在reset裡*/
     color: #666; /* 重複的色碼可以省略 */ /* 所有顏色共用，包括visited, hover, focus, active */
-    text-decoration: none; 
+    text-decoration: none; /* 取消預設底線 */
+    /* transition屬性不能寫在hover身上，要寫在元素本身身上，不然移開就沒有動畫了 */
+    transition: .4s .01s; /* Duration通常不會設太長，不然沒有滿足時間動畫會跳掉。屬性如果後面不一樣再覆蓋就好了 */
+}
+
+/* 共用區 */
+/* 區塊標題 */
+.title h2 {
+
 }
 
 /* 頁首區 */ 
@@ -90,6 +104,8 @@ div.logo { /* class用. */
     justify-content: flex-end;
 }
 
+
+
 /* icon選單 */
 #topbar .icon a { 
     width: 35px; /* 很小的尺寸會寫死，不會用百分比縮放 */
@@ -111,8 +127,20 @@ div.logo { /* class用. */
     padding: 0 10px; /* 順時針方向 */
     border-radius: 9999px;
     /* 玻璃擬態 */
-    background-color: var(--alpha-w-20);
-    border: 2px solid var(--alpha-w-20);
+    /* background-color: var(--alpha-w-20); */
+    /* 漸層色要使用背景影像屬性 */
+    background-image: linear-gradient(to bottom right, rgba(255,255,255, .1),  rgba(255,255,255, .4));
+    border: 2px solid var(--alpha-w-40);
+    backdrop-filter: blur(20px);
+    box-shadow: 2px 2px 5px var(--alpha-b-20), 
+                inset -1px -1px 1px var(--alpha-w-40); /* 容器陰影只針對元素本身，子元素不會套用 */
+
+    /* 濾鏡的陰影是包含子元素都會套用（所有的孩子都有陰影） */
+    /* filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.2)); */ /* 濾鏡會包含子元素都有陰影 */
+
+    /* 文字陰影：只針對文字元素，包含子元素 */
+    /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); */
+
 }
 
 #topbar .menu a {
@@ -124,8 +152,46 @@ div.logo { /* class用. */
     color: #222;
     border-bottom: solid 2px #222;
 }
+
 /* 聯絡我們 */
 #contact {
     height: 100vh;
-    background-color: var(--bg-1);
+    background-image: url(../images/banner_1.jpg); 
+    /* 背景影像（bg-image）預設排序會比背景顏色（bg-color）高 ，所以會覆蓋過去
+    background-color: var(--bg-1);*/
+}
+
+
+
+/* 頁尾區 */
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    background-color: var(--lesser-4);
+    color: var(--light);
+}
+
+footer h2 {
+    font-size: 1.5rem;
+}
+
+footer h2 span {
+    font-size: 1rem;
+}
+
+footer a { /* 覆蓋掉前面的屬性 */
+    color: var(--light);
+}
+
+footer .sitemap {
+    display: flex;
+}
+/* [>]指定為第一層，只會套用在第一層 */
+footer .sitemap>li {
+    margin: 0 10px;
+}
+
+footer small {
+    align-self: flex-end;
 }
