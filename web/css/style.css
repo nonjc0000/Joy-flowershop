@@ -1,4 +1,9 @@
 @charset "UTF-8";   /* 編碼一定要寫不然會變亂碼，而且一定要在第一行 */
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Ubuntu&display=swap'); /* google font一定要在第二行 */
+@font-face {
+    font-family: 'Ashley_Southine_Demo';
+    src: url(../webfonts/Ashley\ Southine\ Demo.ttf);
+}
 
 /* CSS 變數 */
 :root {
@@ -78,8 +83,26 @@ a {   /* 沒有標點符號就是標籤 */
 
 /* 共用區 */
 /* 區塊標題 */
-.title h2 {
 
+.title{
+    margin-bottom: 30px;
+}
+
+.title * { /* 星號(*)表示抓裡面所有的子孫元素 */
+    text-align: center;
+    font-weight: 700;
+}
+
+.title h2 {
+    font-family: 'Ashley_Southine_Demo';
+    font-size: 2rem;
+    padding-bottom: 5px;
+    border-bottom: solid 2px var(--deep);
+}
+
+.title h3 {
+    font-family: "LXGW WenKai TC", cursive;
+    font-size: 1.2rem;
 }
 
 /* 頁首區 */ 
@@ -144,6 +167,8 @@ div.logo { /* class用. */
 }
 
 #topbar .menu a {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
     margin: 10px;
     border-bottom: solid 2px transparent; /* 保留hover的空間但顏色透明，以防尺寸變動 */
 }
@@ -155,12 +180,36 @@ div.logo { /* class用. */
 
 /* 聯絡我們 */
 #contact {
+    display: flex;
+    flex-direction: column; /* 主軸：垂直 */
+    justify-content: center; /* 主軸（垂直）對齊：置中 */
+    align-items: center; /* 副軸（水平）對齊：置中 */
     height: 100vh;
-    background-image: url(../images/banner_1.jpg); 
+    /* background-image: url(../images/banner_1.jpg);  */
     /* 背景影像（bg-image）預設排序會比背景顏色（bg-color）高 ，所以會覆蓋過去
     background-color: var(--bg-1);*/
 }
 
+#contact .content{
+    width: 80%;
+    display: flex;   
+}
+
+#contact .content > * {
+    flex: 1; /* 設定在子元素身上，父元素必須開flex */
+    margin: 0 15px;
+}
+
+#contact .content h1{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+#contact .content address{
+    font-size: .8rem;
+    font-style: normal;
+    margin: 20px 0;
+}
 
 
 /* 頁尾區 */
