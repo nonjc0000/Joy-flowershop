@@ -1,5 +1,8 @@
-@charset "UTF-8";   /* 編碼一定要寫不然會變亂碼，而且一定要在第一行 */
-@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Ubuntu&display=swap'); /* google font一定要在第二行 */
+@charset "UTF-8";
+/* 編碼一定要寫不然會變亂碼，而且一定要在第一行 */
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Ubuntu&display=swap');
+
+/* google font一定要在第二行 */
 @font-face {
     font-family: 'Ashley_Southine_Demo';
     src: url(../webfonts/Ashley\ Southine\ Demo.ttf);
@@ -31,64 +34,157 @@
 }
 
 /* CSS reset */
-* { /* for 全部 */
-     box-sizing: border-box; /* 不累加內距及邊框，for RWD */
+* {
+    /* for 全部 */
+    box-sizing: border-box;
+    /* 不累加內距及邊框，for RWD */
 }
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video{
-    margin: 0;   
-    padding: 0; 
-    font-size: 100%;  
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
 }
+
 /* 重置字體 */
-body {   
+body {
     /* 字體名稱有空格（兩個單字以上）的要引號（""）、中文一定要引號。
     單一英文單字或者有用dash就不用加引號。（不知道的話全加引號）*/
-    font-family: /*⻄⽂*/ -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
-                 /*中⽂*/ "蘋⽅-繁", "PingFang TC", "⿊體-繁", "Heiti TC", "微軟正⿊體", "Microsoft JhengHei", sans-serif;
-    line-height: 1.5; 
+    font-family:
+        /*⻄⽂*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中⽂*/
+        "蘋⽅-繁", "PingFang TC", "⿊體-繁", "Heiti TC", "微軟正⿊體", "Microsoft JhengHei", sans-serif;
+    line-height: 1.5;
 }
+
 /* 重置標題 */
-h1, h2, h3, h4, h5, h6 {   
-    font-weight: normal; 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
 }
+
 /* 重置列表 */
-ul, ol {   
-    list-style: none; 
+ul,
+ol {
+    list-style: none;
 }
+
 /* 重置圖片 */
-img {   
-    display: block;   
-    width: 100%; /* 跟著容器變化 */
+img {
+    display: block;
+    width: 100%;
+    /* 跟著容器變化 */
 }
+
 /* 重置連結 */
-a {   /* 沒有標點符號就是標籤 */
-    display: block; /* inline不支援尺寸設定，但a常用來設定尺寸，所以直接把inline改為block。也可以直接寫在reset裡*/
-    color: #666; /* 重複的色碼可以省略 */ /* 所有顏色共用，包括visited, hover, focus, active */
-    text-decoration: none; /* 取消預設底線 */
+a {
+    /* 沒有標點符號就是標籤 */
+    display: block;
+    /* inline不支援尺寸設定，但a常用來設定尺寸，所以直接把inline改為block。也可以直接寫在reset裡*/
+    color: #666;
+    /* 重複的色碼可以省略 */
+    /* 所有顏色共用，包括visited, hover, focus, active */
+    text-decoration: none;
+    /* 取消預設底線 */
     /* transition屬性不能寫在hover身上，要寫在元素本身身上，不然移開就沒有動畫了 */
-    transition: .4s .01s; /* Duration通常不會設太長，不然沒有滿足時間動畫會跳掉。屬性如果後面不一樣再覆蓋就好了 */
+    transition: .4s .01s;
+    /* Duration通常不會設太長，不然沒有滿足時間動畫會跳掉。屬性如果後面不一樣再覆蓋就好了 */
 }
 
 /* 共用區 */
 /* 區塊標題 */
 
-.title{
+.title {
     margin-bottom: 30px;
 }
 
-.title * { /* 星號(*)表示抓裡面所有的子孫元素 */
+.title * {
+    /* 星號(*)表示抓裡面所有的子孫元素 */
     text-align: center;
     font-weight: 700;
 }
@@ -105,21 +201,27 @@ a {   /* 沒有標點符號就是標籤 */
     font-size: 1.2rem;
 }
 
-/* 頁首區 */ 
+/* 頁首區 */
 /* css沒有先後問題，但通常為了方便會按照html的順序寫 */
-#topbar { /* id用# */
-    position: fixed; /* position權重較重 */
+#topbar {
+    /* id用# */
+    position: fixed;
+    /* position權重較重 */
     top: 0;
     left: 0;
-    width: 100%; /* position預設寬高為hug，要手動寫寬度 */
+    width: 100%;
+    /* position預設寬高為hug，要手動寫寬度 */
 
     display: flex;
     justify-content: space-between;
-    padding: 30px; /* 上下左右都會有內距 */
+    padding: 30px;
+    /* 上下左右都會有內距 */
 }
 
-div.logo { /* class用. */
-    width: 55px; /* 不希望logo變大變小，會影響排版 */
+div.logo {
+    /* class用. */
+    width: 55px;
+    /* 不希望logo變大變小，會影響排版 */
 }
 
 #topbar ul {
@@ -130,36 +232,56 @@ div.logo { /* class用. */
 
 
 /* icon選單 */
-#topbar .icon a { 
-    width: 35px; /* 很小的尺寸會寫死，不會用百分比縮放 */
+#topbar .icon a {
+    width: 35px;
+    /* 很小的尺寸會寫死，不會用百分比縮放 */
     height: 35px;
     margin: 5px;
 }
 
 /* svg檔案會自動w:fill/h:auto 其他點陣圖不會自動fill，要寫background-size: 100%;*/
- .icon-FB { background-image: url(../images/icon-fb.svg); }
- .icon-IG { background-image: url(../images/icon-ig.svg); }
- .icon-LINE { background-image: url(../images/icon-line.svg); }
+.icon-FB {
+    background-image: url(../images/icon-fb.svg);
+}
 
- .icon-FB:hover { background-image: url(../images/icon-fb-hover.svg); }
- .icon-IG:hover { background-image: url(../images/icon-ig-hover.svg); }
- .icon-LINE:hover { background-image: url(../images/icon-line-hover.svg); }
+.icon-IG {
+    background-image: url(../images/icon-ig.svg);
+}
+
+.icon-LINE {
+    background-image: url(../images/icon-line.svg);
+}
+
+.icon-FB:hover {
+    background-image: url(../images/icon-fb-hover.svg);
+}
+
+.icon-IG:hover {
+    background-image: url(../images/icon-ig-hover.svg);
+}
+
+.icon-LINE:hover {
+    background-image: url(../images/icon-line-hover.svg);
+}
 
 /* 主選單 */
 #topbar .menu {
-    padding: 0 10px; /* 順時針方向 */
+    padding: 0 10px;
+    /* 順時針方向 */
     border-radius: 9999px;
     /* 玻璃擬態 */
     /* background-color: var(--alpha-w-20); */
     /* 漸層色要使用背景影像屬性 */
-    background-image: linear-gradient(to bottom right, rgba(255,255,255, .1),  rgba(255,255,255, .4));
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, .1), rgba(255, 255, 255, .4));
     border: 2px solid var(--alpha-w-40);
     backdrop-filter: blur(20px);
-    box-shadow: 2px 2px 5px var(--alpha-b-20), 
-                inset -1px -1px 1px var(--alpha-w-40); /* 容器陰影只針對元素本身，子元素不會套用 */
+    box-shadow: 2px 2px 5px var(--alpha-b-20),
+        inset -1px -1px 1px var(--alpha-w-40);
+    /* 容器陰影只針對元素本身，子元素不會套用 */
 
     /* 濾鏡的陰影是包含子元素都會套用（所有的孩子都有陰影） */
-    /* filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.2)); */ /* 濾鏡會包含子元素都有陰影 */
+    /* filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.2)); */
+    /* 濾鏡會包含子元素都有陰影 */
 
     /* 文字陰影：只針對文字元素，包含子元素 */
     /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); */
@@ -170,7 +292,8 @@ div.logo { /* class用. */
     font-family: "Ubuntu", sans-serif;
     font-weight: 700;
     margin: 10px;
-    border-bottom: solid 2px transparent; /* 保留hover的空間但顏色透明，以防尺寸變動 */
+    border-bottom: solid 2px transparent;
+    /* 保留hover的空間但顏色透明，以防尺寸變動 */
 }
 
 #topbar .menu a:hover {
@@ -181,36 +304,68 @@ div.logo { /* class用. */
 /* 聯絡我們 */
 #contact {
     display: flex;
-    flex-direction: column; /* 主軸：垂直 */
-    justify-content: center; /* 主軸（垂直）對齊：置中 */
-    align-items: center; /* 副軸（水平）對齊：置中 */
+    flex-direction: column;
+    /* 主軸：垂直 */
+    justify-content: center;
+    /* 主軸（垂直）對齊：置中 */
+    align-items: center;
+    /* 副軸（水平）對齊：置中 */
     height: 100vh;
     /* background-image: url(../images/banner_1.jpg);  */
     /* 背景影像（bg-image）預設排序會比背景顏色（bg-color）高 ，所以會覆蓋過去
     background-color: var(--bg-1);*/
 }
 
-#contact .content{
+#contact .content {
     width: 80%;
-    display: flex;   
+    display: flex;
 }
 
-#contact .content > * {
-    flex: 1; /* 設定在子元素身上，父元素必須開flex */
+#contact .content>* {
+    flex: 1;
+    /* 設定在子元素身上，父元素必須開flex */
     margin: 0 15px;
 }
 
-#contact .content h1{
+#contact .content h1 {
     font-size: 1.5rem;
     font-weight: 500;
 }
 
-#contact .content address{
+#contact .content address {
     font-size: .8rem;
     font-style: normal;
     margin: 20px 0;
 }
 
+/* 聯絡表單 */
+#contact-form>* {
+    display: block;
+    width: 100%;
+}
+
+#contact-form label {
+    margin: 30px 0 10px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    border: 1px solid var(--lesser-3);
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--lesser-4);
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: 2px solid var(--lesser-4);
+}
+
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+    color: var(--lesser-3);
+    font-size: 0.75rem;
+}
 
 /* 頁尾區 */
 footer {
@@ -229,13 +384,15 @@ footer h2 span {
     font-size: 1rem;
 }
 
-footer a { /* 覆蓋掉前面的屬性 */
+footer a {
+    /* 覆蓋掉前面的屬性 */
     color: var(--light);
 }
 
 footer .sitemap {
     display: flex;
 }
+
 /* [>]指定為第一層，只會套用在第一層 */
 footer .sitemap>li {
     margin: 0 10px;
