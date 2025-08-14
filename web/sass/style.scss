@@ -1,0 +1,107 @@
+@use 'reset'; // @use 必須在任何其他規則之前寫入
+@use 'variables' as *;
+@use 'function' as *;
+@use './keyframes';
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Ubuntu&display=swap');
+
+@font-face {
+    font-family: 'Ashley_Southine_Demo';
+    src: url(../webfonts/Ashley\ Southine\ Demo.ttf);
+}
+
+/* ------共用區------ */
+
+// 區塊標題
+.title {
+    margin: $spacing-ex 0 $spacing-xl;
+
+    * {
+        // 星號(*)表示抓裡面所有的子孫元素
+        text-align: center;
+        font-weight: 700;
+    }
+
+    h2 {
+        font-family: $family-display;
+        @include border-b;
+        font-weight: $f-w-b;
+    }
+
+    h3 {
+        font-family: $family-tc;
+        font-size: $f-s-lg;
+    }
+
+}
+
+.logo {
+    width: 55px;
+}
+
+/* ------頁首區------ */
+
+#topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $w-100;
+    z-index: $z-ex;
+    @extend %flex-between;
+    padding: $spacing-xs $spacing-xl;
+
+    ul {
+        @extend %flex-end;
+    }
+
+    .menu {
+        padding: $spacing-x-xs;
+        border-radius: $rad-ex;
+        @include glassmorphism;
+
+        a {
+            font-family: $family-en;
+            font-weight: $f-w-b;
+            margin: $spacing-xs;
+            @include border-b($width: 2px, $color: transparent);
+
+            &:hover {
+                color: $black;
+                @include border-b($width: 2px, $color: transparent);
+            }
+        }
+    }
+
+    .icon {
+        a {
+            width: 35px;
+            height: 35px;
+            margin: $spacing-xxs;
+        }
+    }
+
+}
+
+
+
+// 迴圈不用調用，直接編譯語法（不可寫入function）
+@each $social in fb, ig, line {
+    .icon-#{$social} {
+        background-image: url(../images/icon-#{$social}.svg);
+
+        &:hover {
+            border-image: url(../images/icon-#{$social}-hover.svg);
+        }
+    }
+}
+
+
+
+
+
+
+
+#contactform {
+    .btn-animate {
+        @extend %btn-animate;
+    }
+}
