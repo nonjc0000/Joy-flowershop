@@ -95,13 +95,127 @@
 }
 
 
+/* 聯絡我們 */
+#contact {
+    position: relative;
+    overflow: hidden;
+    @extend %flex-center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: $bg-1;
 
+    @media ($mediaMd) {
+        height: auto;
+    }
 
+    .content {
+        display: flex;
+        width: $w-80;
 
+        @media ($mediaSm) {
+            flex-direction: column;
+        }
 
+        >* {
+            flex: 1;
+            margin: $spacing-x-xl;
+        }
 
-#contactform {
-    .btn-animate {
-        @extend %btn-animate;
+        h1 {
+            font-size: $f-s-xl;
+            font-weight: $f-w-m;
+        }
+
+        address {
+            font-size: $f-s-sm;
+            font-style: normal;
+            margin: $spacing-y-md;
+        }
+
+        iframe {
+            width: $w-100;
+            height: 300px;
+            border: none;
+        }
+
+        #contact-form {
+            >* {
+                display: block;
+                width: $w-100;
+            }
+
+            label {
+                margin: $spacing-label;
+            }
+
+            .btn-animate {
+                @extend %btn-animate;
+            }
+
+            input {
+                @extend %input-style;
+            }
+
+            textarea {
+                @extend %input-style;
+            }
+        }
+
+    }
+
+    figure {
+        position: absolute;
+        width: 250px;
+
+        @media ($mediaMd) {
+            width: 200px;
+        }
+
+        @media ($mediaSm) {
+            display: none;
+        }
+    }
+
+    .flower_1 {
+        left: 0;
+        bottom: -50px;
+    }
+
+    .flower_2 {
+        right: -30px;
+        top: 130px;
+        transform: rotate(-30deg);
+    }
+}
+
+/* 頁尾區 */
+footer {
+    @extend %flex-between;
+    padding: $spacing-md $spacing-xl;
+    background-color: $lesser-4;
+    color: $light;
+
+    a {
+        color: $light;
+    }
+
+    h2 {
+        font-size: $f-s-xl;
+
+        span {
+            font-size: $f-s-md;
+        }
+    }
+
+    .sitemap {
+        display: flex;
+
+        >li {
+            margin: $spacing-x-xs;
+        }
+    }
+
+    small {
+        align-self: flex-end;
     }
 }

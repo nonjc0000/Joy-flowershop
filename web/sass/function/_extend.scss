@@ -1,6 +1,7 @@
 @use '../variables/' as *;
 @use './mixin' as *;
 // 因為extend也在function資料夾中，不可調用整個function，只需調用mixin檔案
+// 繼承語法會置頂
 
 %flex-center {
     display: flex;
@@ -29,6 +30,7 @@
     color: $lesser-3;
     letter-spacing: $spacing-sm;
     padding-left: $spacing-sm;
+    background-color: $white;
 
     &:hover {
         @include ani-slow($name: myRotate);
@@ -36,5 +38,24 @@
         span {
             @include ani-slow($name: myStorm);
         }
+    }
+}
+
+%input-style {
+    //  border: 1px solid var(--lesser-3);
+    @include bordered;
+    padding: $spacing-xs;
+    border-radius: $spacing-xxs;
+    color: $lesser-4;
+    font-weight: $f-w-m;
+
+    &:focus {
+        outline: 2px solid $lesser-3;
+    }
+
+    &::placeholder {
+        color: $lesser-3;
+        font-size: $f-s-xs;
+        font-weight: $f-w-r;
     }
 }
