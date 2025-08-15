@@ -24,6 +24,7 @@
     h2 {
         font-family: $family-display;
         @include border-b;
+        font-size: $f-s-xxxl;
         font-weight: $f-w-b;
     }
 
@@ -66,7 +67,7 @@
 
             &:hover {
                 color: $black;
-                @include border-b($width: 2px, $color: transparent);
+                @include border-b($width: 2px, $color: $black);
             }
         }
     }
@@ -84,12 +85,12 @@
 
 
 // 迴圈不用調用，直接編譯語法（不可寫入function）
-@each $social in fb, ig, line {
+@each $social in FB, IG, LINE {
     .icon-#{$social} {
         background-image: url(../images/icon-#{$social}.svg);
 
         &:hover {
-            border-image: url(../images/icon-#{$social}-hover.svg);
+            background-image: url(../images/icon-#{$social}-hover.svg);
         }
     }
 }
@@ -207,8 +208,27 @@ footer {
         }
     }
 
+    @media ($mediaSm) {
+        flex-direction: column;
+    }
+
     .sitemap {
         display: flex;
+
+        @media ($mediaMd) {
+            margin-top: $spacing-xl;
+        }
+
+        @media ($mediaSm) {
+            flex-direction: column;
+            ul{
+                padding-left: $spacing-md;
+
+                li{
+                    padding: $spacing-y-xs;
+                }
+            }
+        }
 
         >li {
             margin: $spacing-x-xs;
@@ -217,5 +237,9 @@ footer {
 
     small {
         align-self: flex-end;
+        @media ($mediaSm) {
+            align-self: flex-start;
+            margin-top: $spacing-xl;
+        }
     }
 }
