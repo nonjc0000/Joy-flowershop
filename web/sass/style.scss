@@ -22,21 +22,56 @@
     }
 
     h2 {
+        position: relative;
         font-family: $family-display;
         @include border-b;
         font-size: $f-s-xxxl;
         font-weight: $f-w-b;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -10px;
+            // left: calc(50% - 15px);
+            background-color: $lesser-4;
+            width: 15px;
+            height: 15px;
+            border-radius: $rad-ex;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0px;
+            right: -5px;
+            // left: calc(50% - 15px);
+            background-color: $lesser-4;
+            width: 10px;
+            height: 10px;
+            border-radius: $rad-ex;
+        }
     }
 
     h3 {
         font-family: $family-tc;
         font-size: $f-s-lg;
     }
-
 }
 
 .logo {
     width: 55px;
+}
+
+.more {
+    width: 100px;
+    // height: 50px; 行高跟高度相同
+    line-height: 50px; // 單行文字垂直置中，可以直接設定行高取代高度
+    text-align: center;
+    background-color: $lesser-4;
+    margin-top: $spacing-lg;
+    color: $light;
+    border-radius: $rad-ex;
 }
 
 /* ------頁首區------ */
@@ -82,7 +117,14 @@
 
 }
 
-
+/* 主要內容區 */
+#index {
+    section {
+        @extend %flex-center;
+        flex-direction: column;
+        height: 100vh;
+    }
+}
 
 // 迴圈不用調用，直接編譯語法（不可寫入function）
 @each $social in FB, IG, LINE {
@@ -95,6 +137,71 @@
     }
 }
 
+.list-box {
+    display: flex;
+    gap: $spacing-xl;
+    width: $w-80;
+    max-width: 1100px; // 通常要閱讀的東西會定義最大寬度，增加閱讀的注意力（集中在中間）
+
+    .item {
+        overflow: hidden; // 超過圓角被隱藏
+        flex: 1;
+        @include bordered;
+        border-radius: $rad-md;
+    }
+}
+
+/* 最新消息 */
+#news {
+    background-color: $bg-1;
+
+    figure {
+        height: 30vh;
+
+        img {
+            @extend %img-cover;
+        }
+    }
+
+    .text-box {
+        padding: $spacing-md;
+
+        h2 {
+            font-size: $f-s-lg;
+            font-weight: $f-w-m;
+            margin-bottom: $spacing-xs;
+        }
+
+        p {
+            @extend %multiple-lines;
+            -webkit-line-clamp: 4;
+            text-align: justify; // 齊行（中文文案可以用，英文不建議）
+        }
+    }
+}
+
+/* 服務項目 */
+#service {
+    .item{
+        height: 50vh;
+
+        background-size: cover; // 自動縮放，並剪裁掉圖片右下範圍
+        background-position: center; // 背景置中要另外寫
+
+        &:nth-child(1){
+            background-image: url(../images/pt_svc1.jpg)
+        };
+        &:nth-child(2){
+            background-image: url(../images/pt_svc2.jpg)
+        };
+        &:nth-child(3){
+            background-image: url(../images/pt_svc3.jpg)
+        };
+        &:nth-child(4){
+            background-image: url(../images/pt_svc4.jpg)
+        };
+    }
+}
 
 /* 聯絡我們 */
 #contact {
@@ -221,10 +328,11 @@ footer {
 
         @media ($mediaSm) {
             flex-direction: column;
-            ul{
+
+            ul {
                 padding-left: $spacing-md;
 
-                li{
+                li {
                     padding: $spacing-y-xs;
                 }
             }
@@ -237,6 +345,7 @@ footer {
 
     small {
         align-self: flex-end;
+
         @media ($mediaSm) {
             align-self: flex-start;
             margin-top: $spacing-xl;

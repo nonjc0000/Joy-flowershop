@@ -19,6 +19,20 @@
     justify-content: flex-end;
 }
 
+%img-cover {
+    object-fit: cover;
+    // width: 100%; reset已經設定過了
+    height: 100%;
+}
+
+%multiple-lines {
+    // 多行省略
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
 %btn-animate {
     border-radius: $rad-ex;
     @extend %flex-center;

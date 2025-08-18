@@ -139,7 +139,7 @@ a {
   /* Duration通常不會設太長，不然沒有滿足時間動畫會跳掉。屬性如果後面不一樣再覆蓋就好了 */
 }
 
-#contact, #contact .content #contact-form .btn-animate {
+#index section, #contact, #contact .content #contact-form .btn-animate {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -153,6 +153,18 @@ a {
 #topbar ul {
   display: flex;
   justify-content: flex-end;
+}
+
+#news figure img {
+  object-fit: cover;
+  height: 100%;
+}
+
+#news .text-box p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
 
 #contact .content #contact-form .btn-animate {
@@ -237,10 +249,31 @@ a {
   font-weight: 700;
 }
 .title h2 {
+  position: relative;
   font-family: "Ashley_Southine_Demo";
   border-bottom: solid 3px #393a3a;
   font-size: 2rem;
   font-weight: 700;
+}
+.title h2::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -10px;
+  background-color: #8f6d6b;
+  width: 15px;
+  height: 15px;
+  border-radius: 99px;
+}
+.title h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  right: -5px;
+  background-color: #8f6d6b;
+  width: 10px;
+  height: 10px;
+  border-radius: 99px;
 }
 .title h3 {
   font-family: "LXGW WenKai TC", cursive;
@@ -249,6 +282,16 @@ a {
 
 .logo {
   width: 55px;
+}
+
+.more {
+  width: 100px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #8f6d6b;
+  margin-top: 25px;
+  color: #f7fcff;
+  border-radius: 99px;
 }
 
 /* ------頁首區------ */
@@ -286,6 +329,12 @@ a {
   margin: 5px;
 }
 
+/* 主要內容區 */
+#index section {
+  flex-direction: column;
+  height: 100vh;
+}
+
 .icon-FB {
   background-image: url(../images/icon-FB.svg);
 }
@@ -305,6 +354,58 @@ a {
 }
 .icon-LINE:hover {
   background-image: url(../images/icon-LINE-hover.svg);
+}
+
+.list-box {
+  display: flex;
+  gap: 30px;
+  width: 80%;
+  max-width: 1100px;
+}
+.list-box .item {
+  overflow: hidden;
+  flex: 1;
+  border: solid 1px #8f6d6b;
+  border-radius: 12px;
+}
+
+/* 最新消息 */
+#news {
+  background-color: #f2edf0;
+}
+#news figure {
+  height: 30vh;
+}
+#news .text-box {
+  padding: 20px;
+}
+#news .text-box h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+#news .text-box p {
+  -webkit-line-clamp: 4;
+  text-align: justify;
+}
+
+/* 服務項目 */
+#service .item {
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+}
+#service .item:nth-child(1) {
+  background-image: url(../images/pt_svc1.jpg);
+}
+#service .item:nth-child(2) {
+  background-image: url(../images/pt_svc2.jpg);
+}
+#service .item:nth-child(3) {
+  background-image: url(../images/pt_svc3.jpg);
+}
+#service .item:nth-child(4) {
+  background-image: url(../images/pt_svc4.jpg);
 }
 
 /* 聯絡我們 */
