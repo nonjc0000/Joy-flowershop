@@ -21,7 +21,7 @@
 
 %img-cover {
     object-fit: cover;
-    // width: 100%; reset已經設定過了
+    width: 100%; // reset已經設定過了
     height: 100%;
 }
 
@@ -31,6 +31,18 @@
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
+}
+
+%list-title {
+    font-size: $f-s-lg;
+    font-weight: $f-w-m;
+    margin-bottom: $spacing-xs;
+}
+
+%single-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 %btn-animate {

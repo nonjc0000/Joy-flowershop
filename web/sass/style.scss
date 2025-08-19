@@ -123,6 +123,13 @@
         @extend %flex-center;
         flex-direction: column;
         height: 100vh;
+
+        @media ($mediaMd) {
+            &#video {
+                height: auto;
+                padding-bottom: $spacing-ex;
+            }
+        }
     }
 }
 
@@ -155,52 +162,168 @@
 #news {
     background-color: $bg-1;
 
-    figure {
-        height: 30vh;
+    article {
+        @media ($mediaMd) {
 
-        img {
-            @extend %img-cover;
+            // 平板尺寸以下包含手機
+            &:last-child {
+                display: none;
+            }
         }
+
+        @media ($mediaSm) {
+            &:nth-child(n+2) {
+                // 第二個以後的所有孩子作用（含第二個）
+                display: none;
+            }
+        }
+
+        a {
+            &:hover {
+                .text-box {
+                    background-color: $light;
+                }
+
+                figure {
+                    filter: brightness(80%);
+                    // filter: saturate(20%);
+                }
+            }
+
+            figure {
+                height: 30vh;
+                transition: $speed-fast;
+
+                img {
+                    @extend %img-cover;
+                }
+            }
+
+            .text-box {
+                padding: $spacing-md;
+                transition: $speed-fast; // 要設定在元素本人身上
+
+                h2 {
+                    @extend %list-title;
+                }
+
+                p {
+                    @extend %multiple-lines;
+                    -webkit-line-clamp: 4;
+                    text-align: justify; // 齊行（中文文案可以用，英文不建議）
+                }
+            }
+        }
+
+
     }
 
-    .text-box {
-        padding: $spacing-md;
 
-        h2 {
-            font-size: $f-s-lg;
-            font-weight: $f-w-m;
-            margin-bottom: $spacing-xs;
-        }
-
-        p {
-            @extend %multiple-lines;
-            -webkit-line-clamp: 4;
-            text-align: justify; // 齊行（中文文案可以用，英文不建議）
-        }
-    }
 }
 
 /* 服務項目 */
 #service {
-    .item{
-        height: 50vh;
+    background-color: $bg-2;
 
-        background-size: cover; // 自動縮放，並剪裁掉圖片右下範圍
-        background-position: center; // 背景置中要另外寫
+    .list-box {
+        @media ($mediaMd) {
+            flex-direction: column;
+            height: 70vh; // 主軸垂直，高度轉換為hug，影響到子元素展不開
+        }
 
-        &:nth-child(1){
-            background-image: url(../images/pt_svc1.jpg)
-        };
-        &:nth-child(2){
-            background-image: url(../images/pt_svc2.jpg)
-        };
-        &:nth-child(3){
-            background-image: url(../images/pt_svc3.jpg)
-        };
-        &:nth-child(4){
-            background-image: url(../images/pt_svc4.jpg)
-        };
+        .item {
+            display: flex;
+            align-items: flex-end;
+            height: 50vh;
+            background-size: cover; // 自動縮放，並剪裁掉圖片右下範圍
+            background-position: center; // 背景置中要另外寫
+
+
+            @media ($mediaMd) {
+                &:nth-child(n+3) {
+                    // 第三個（含三）以後作用
+                    display: none;
+                }
+            }
+
+            @media ($mediaSm) {
+                &:nth-child(n+2) {
+                    // 第二個（含二）以後作用
+                    display: none;
+                }
+            }
+
+
+            &:nth-child(1) {
+                background-image: url(../images/pt_svc1.jpg)
+            }
+
+            &:nth-child(2) {
+                background-image: url(../images/pt_svc2.jpg)
+            }
+
+            &:nth-child(3) {
+                background-image: url(../images/pt_svc3.jpg)
+            }
+
+            &:nth-child(4) {
+                background-image: url(../images/pt_svc4.jpg);
+            }
+
+            a {
+                width: 100%; // 因為flex會讓a變成hug，所以要手動設定限制寬度
+                padding: $spacing-md;
+                color: $light;
+                background-color: $alpha-b-60;
+
+                h2 {
+                    @extend %list-title;
+                }
+
+                p {
+                    @extend %single-line;
+                }
+
+                &:hover {
+                    color: $black;
+                    background-color: $alpha-w-70;
+                }
+            }
+        }
     }
+
+}
+
+/* 相關影片 */
+#video {
+    background-image: url(../images/bg_contact.jpg);
+    background-size: cover;
+    background-position: center; // background-cover建議搭配position: center
+    background-attachment: fixed;
+
+    @media ($mediaMd) {
+        height: auto;
+    }
+
+    div {
+        @extend %flex-center;
+        height: 50vh; // 設定寬度時會有等比例超過視窗的風險，因此改為設定高度
+
+        @media ($mediaMd) {
+            height: auto; // 要蓋掉屬性要設auto
+            width: 70%;
+        }
+
+        video {
+            height: 100%;
+
+            @media ($mediaMd) {
+                width: 80%;
+                height: auto;
+            }
+        }
+    }
+
 }
 
 /* 聯絡我們 */
@@ -293,6 +416,20 @@
         right: -30px;
         top: 130px;
         transform: rotate(-30deg);
+    }
+}
+
+/* 關於我們 */
+#about {
+    position: relative;
+    background-color: $bg-2;
+
+    video {
+        position: absolute;
+        @extend %img-cover;
+        // opacity: .3;
+        // filter: brightness(150%);
+        mix-blend-mode: overlay;
     }
 }
 
