@@ -389,6 +389,7 @@
 
             textarea {
                 @extend %input-style;
+                border-bottom-right-radius: 0;
             }
         }
 
@@ -422,13 +423,94 @@
 /* 關於我們 */
 #about {
     position: relative;
-    background-color: $bg-2;
+    background-color: $lesser-1;
+
+    div {
+        position: absolute;
+        z-index: 1;
+        width: 60%;
+        height: 100%;
+        background-color: $alpha-w-70;
+        display: flex;
+        flex-direction: column;
+        @extend %flex-center;
+
+        @media ($mediaMd) {
+            width: 80%;
+        }
+
+        p {
+            overflow: scroll;
+            
+            width: 90%;
+            margin-bottom: $spacing-xxl;
+            padding-right: $spacing-xs;
+
+            &::-webkit-scrollbar {
+                // 主要滾動條
+                background-color: $lesser-1;
+                border-radius: $rad-ex;
+                height: 15px;
+                width: 15px;
+                
+            }
+
+            &::-webkit-scrollbar-button {
+                // 上下左右按鈕 
+                display: block;
+                // border: solid 1px red;
+                background-color: $lesser-3;
+                width: 5px; // 控制水平卷軸
+                height: 5px; // 控制垂直卷軸
+                // border-radius: $rad-ex;
+
+                background-size: contain;
+                background-repeat: no-repeat;
+
+                &:vertical:single-button:start{
+                    background-image: url(../images/arrow/arrow-up.svg);
+                }
+
+                &:vertical:single-button:end{
+                    background-image: url(../images/arrow/arrow-down.svg);
+                }
+
+                &:horizontal:single-button:start{
+                    background-image: url(../images/arrow/arrow-left.svg);
+                }
+
+                &:horizontal:single-button:end{
+                    background-image: url(../images/arrow/arrow-right.svg);
+                }
+            }
+
+            &::-webkit-scrollbar-thumb {
+                // 滾動手柄
+                background-color: $lesser-3;
+                border-radius: $rad-ex;
+            }
+
+            &::-webkit-scrollbar-track {
+                // 滾動軌道（不包含按鈕範圍）
+                background-color: $lesser-2;
+            }
+
+            // &::-webkit-scrollbar-track-piece{
+            //     // 未被按鈕遮住的範圍
+            //     // background-color: $lesser-2;
+            // }
+
+            &::-webkit-scrollbar-corner{
+                background-color: $lesser-4;
+            }
+        }
+    }
 
     video {
-        position: absolute;
+        // position: absolute;
         @extend %img-cover;
         // opacity: .3;
-        // filter: brightness(150%);
+        filter: brightness(70%) contrast(120%);
         mix-blend-mode: overlay;
     }
 }
