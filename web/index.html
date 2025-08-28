@@ -8,7 +8,7 @@
     <title>喬伊花室-首頁</title>
     <!-- favicon必須是正方形，16*16（一般會做三倍48*48） -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-   <!-- Carousel css，別人的套件常會獨立檔案連結-->
+    <!-- Carousel css，別人的套件常會獨立檔案連結-->
     <link rel="stylesheet" href="./css/carousel.min.css">
     <!-- My CSS一定要放最下面，權重最重 -->
     <link rel="stylesheet" href="./css/style.min.css">
@@ -18,30 +18,44 @@
     <header id="topbar"> <!-- 大樓層用id -->
         <!-- logo區 -->
         <div class="logo">
-            <img src="./images/logo_b.svg" alt="Joy花室">
+            <a href="./index.html">
+                <img src="./images/logo_b.svg" alt="Joy花室">
+            </a>
         </div>
-        <!-- 導覽列 -->
-        <nav class="navigation">
-            <!-- 從上到下、左到右寫 -->
-            <!-- icon選單 -->
-            <ul class="icon"> <!-- 自己命名 -->
-                <li><a class="icon-FB" href="#"></a></li>
-                <li><a class="icon-IG" href="#"></a></li>
-                <li><a class="icon-LINE" href="#"></a></li>
-            </ul>
 
-            <!-- 主選單 -->
-            <ul class="menu">
-                <!-- ul>li*6>a -->
-                <!-- 還沒放hyperlink就先用# -->
-                <li><a href="./index.html">HOME</a></li>
-                <li><a href="#">NEWS</a></li>
-                <li><a href="#">SERVICE</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">VIDEO</a></li>
-                <li><a href="./contact.html">CONTACT</a></li>
-            </ul>
-        </nav>
+        <div class="navbar">
+
+            <!-- 漢堡按鈕 -->
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- 導覽列 -->
+            <nav class="navigation">
+                <!-- 從上到下、左到右寫 -->
+                <!-- icon選單 -->
+                <ul class="icon"> <!-- 自己命名 -->
+                    <li><a class="icon-FB" href="#"></a></li>
+                    <li><a class="icon-IG" href="#"></a></li>
+                    <li><a class="icon-LINE" href="#"></a></li>
+                </ul>
+
+                <!-- 主選單 -->
+                <ul class="menu">
+                    <!-- ul>li*6>a -->
+                    <!-- 還沒放hyperlink就先用# -->
+                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="#">NEWS</a></li>
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">VIDEO</a></li>
+                    <li><a href="./contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+
+        </div>
     </header>
 
     <main id="index">
@@ -334,7 +348,7 @@
         </nav>
         <small>Copyright &copy; 喬伊花室 Joy Flower Shop</small>
 
-          <button id="goTop" title="Back to Top">
+        <button id="goTop" title="Back to Top">
             <svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
                 <style type="text/css">
@@ -352,7 +366,7 @@
         </button>
     </footer>
 
-     <!-- jQuery CDN -->
+    <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 

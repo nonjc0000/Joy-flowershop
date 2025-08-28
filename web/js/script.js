@@ -1,4 +1,13 @@
 $(function () {
+    // 漢堡按鈕
+    $(".hamburger").click(function () {
+        // 切換選單樣式
+        $(this).toggleClass("is-active");
+
+        // 切換選單顯示&隱藏
+        $(".navigation").toggleClass("show");
+    });
+
     // 捲動至指定區段
     $(".menu a").click(function () {
         var btn = $(this).attr("href");
