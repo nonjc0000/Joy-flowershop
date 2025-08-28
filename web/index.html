@@ -8,6 +8,9 @@
     <title>喬伊花室-首頁</title>
     <!-- favicon必須是正方形，16*16（一般會做三倍48*48） -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+   <!-- Carousel css，別人的套件常會獨立檔案連結-->
+    <link rel="stylesheet" href="./css/carousel.min.css">
+    <!-- My CSS一定要放最下面，權重最重 -->
     <link rel="stylesheet" href="./css/style.min.css">
 </head>
 
@@ -330,7 +333,35 @@
             </ul>
         </nav>
         <small>Copyright &copy; 喬伊花室 Joy Flower Shop</small>
+
+          <button id="goTop" title="Back to Top">
+            <svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                <style type="text/css">
+                    .st0 {
+                        fill: none;
+                        stroke: #FFFFFF;
+                        stroke-width: 8;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        stroke-miterlimit: 10;
+                    }
+                </style>
+                <path class="st0" d="M19.73,63.42l26.98-26.98c2.22-2.22,5.81-2.22,8.02,0l26.98,26.98" />
+            </svg>
+        </button>
     </footer>
+
+     <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- carousel JS別人的套件，常會獨立檔案連結 -->
+    <script src="./js/carousel.js"></script>
+
+    <!-- My jQuery 一定要在最下面，最後執行 -->
+    <script src="./js/script.js"></script>
+
 </body>
 
 </html>

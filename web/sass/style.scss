@@ -571,3 +571,24 @@ footer {
         }
     }
 }
+
+ #goTop {
+        // display: none; //預設隱藏
+        width: 50px;
+        height: 50px;
+        background-color: $lesser-3;
+        border-radius: $rad-ex;
+
+        //button預設樣式有padding和border
+        border: none;
+
+        position: fixed;
+        bottom: $spacing-xl;
+        right: $spacing-xl;
+        cursor: pointer;
+        z-index: $z-ex;
+
+        &:hover{
+            background-color: $lesser-2;
+        }
+    }
