@@ -134,12 +134,12 @@
             </div>
         </section>
         <section id="news">
-            <header class="title">
+            <header class="title smoove">
                 <h2>NEWS</h2>
                 <h3>最新消息</h3>
             </header>
             <div class="list-box">
-                <article class="item">
+                <article class="item smoove" data-move-x="-500px" data-rotate="90deg">
                     <a href="">
                         <figure><img src="./images/pt_news1.jpg" alt=""></figure>
                         <div class="text-box">
@@ -149,7 +149,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="item">
+                <article class="item smoove" data-move-x="-250px" data-rotate="45deg" data-move-y="150px">
                     <a href="">
                         <figure><img src="./images/pt_news2.jpg" alt=""></figure>
                         <div class="text-box">
@@ -160,7 +160,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="item">
+                <article class="item smoove" data-move-x="500px" data-rotate="-90deg">
                     <a href="">
                         <figure><img src="./images/pt_news3.jpg" alt=""></figure>
                         <div class="text-box">
@@ -172,16 +172,16 @@
                     </a>
                 </article>
             </div>
-            <a class="more" href="#">More</a>
+            <a class="more smoove" href="#">More</a>
         </section>
         <section id="service">
-            <header class="title">
+            <header class="title smoove">
                 <h2>SERVICE</h2>
                 <h3>相關服務</h3>
             </header>
             <!-- ul.list-box>li.item*4>a[href='#']>h2{SERVICE TITLE}+p -->
             <ul class="list-box">
-                <li class="item">
+                <li class="item smoove" data-move-x="-300px" data-move-y="200px">
                     <a href="#">
                         <h2>SERVICE TITLE</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi est temporibus cum ex.
@@ -189,7 +189,7 @@
                             perspiciatis, veniam officiis. Rerum, ea dolorum.</p>
                     </a>
                 </li>
-                <li class="item">
+                <li class="item smoove" data-move-x="-150px" data-move-y="200px">
                     <a href="#">
                         <h2>SERVICE TITLE</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi est temporibus cum ex.
@@ -197,7 +197,7 @@
                             perspiciatis, veniam officiis. Rerum, ea dolorum.</p>
                     </a>
                 </li>
-                <li class="item">
+                <li class="item smoove" data-move-x="150px" data-move-y="200px">
                     <a href="#">
                         <h2>SERVICE TITLE</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi est temporibus cum ex.
@@ -205,7 +205,7 @@
                             perspiciatis, veniam officiis. Rerum, ea dolorum.</p>
                     </a>
                 </li>
-                <li class="item">
+                <li class="item smoove" data-move-x="300px" data-move-y="200px">
                     <a href="#">
                         <h2>SERVICE TITLE</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi est temporibus cum ex.
@@ -214,19 +214,19 @@
                     </a>
                 </li>
             </ul>
-            <a class="more" href="#">More</a>
+            <a class="more smoove" href="#">More</a>
         </section>
         <section id="video">
-            <header class="title">
+            <header class="title smoove">
                 <h2>VIDEO</h2>
                 <h3>相關影片</h3>
             </header>
-            <div>
+            <div class="smoove" data-move-x="-150%" data-rotate-y="-90deg">
                 <video src="./images/Planter.mp4" poster="./images/cover.jpg" controls preload="metadata"></video>
             </div>
         </section>
         <section id="about">
-            <div>
+            <div class="smoove" data-rotate-x="90deg" data-move-z="-500px">
                 <header class="title">
                     <h2>ABOUT</h2>
                     <h3>關於我們</h3>
@@ -370,7 +370,10 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-    <!-- carousel JS別人的套件，常會獨立檔案連結 -->
+    <!-- jQuery Smoove CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+
+    <!-- Carousel JS別人的套件，常會獨立檔案連結 -->
     <script src="./js/carousel.js"></script>
 
     <!-- My jQuery 一定要在最下面，最後執行 -->

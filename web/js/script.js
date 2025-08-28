@@ -30,3 +30,20 @@ $(function () {
     });
 
 });
+
+// smoove
+// 共用預設值
+$('.smoove').smoove({
+    offset: '30%' // 離底部多遠載入
+});
+
+// 遠近載入
+$('.smo-z').smoove({
+    moveZ: '-500px'
+});
+
+// 透視載入
+$('.smo-per').smoove({
+    rotateX: '90deg',
+    moveZ: '-500px',
+});

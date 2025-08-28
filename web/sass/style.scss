@@ -97,6 +97,10 @@
             border: none;
             margin-bottom: $spacing-xs;
 
+            @media ($mediaXl) {
+                display: none;
+            }
+
             .bar {
                 display: block;
                 width: 24px;
